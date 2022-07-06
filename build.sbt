@@ -12,4 +12,7 @@ val root = (project in file("."))
       "org.graalvm.sdk" % "graal-sdk" % "22.1.0" % Provided,
       "org.typelevel" %% "cats-effect" % "3.3.13",
     ),
+    dockerExposedPorts ++= Seq(),
+    dockerBaseImage := "polyglot-ruby:latest",
   )
+  .enablePlugins(JavaAppPackaging, DockerPlugin)
