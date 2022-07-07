@@ -1,10 +1,11 @@
 FROM ghcr.io/graalvm/graalvm-ce:21.3.0
 
-RUN gu install python \
+RUN gu available \
+ && gu install native-image \
+ && gu install python \
  && gu install ruby \
  && ./opt/graalvm-ce-java17-21.3.0/languages/ruby/lib/truffle/post_install_hook.sh \
- && gu install native-image \
- && gu rebuild-images polyglot python ruby
+ && gu rebuild-images --verbose polyglot ruby python
 
 RUN gem install rouge \
  && mkdir /tmp/venv \

@@ -13,6 +13,6 @@ val root = (project in file("."))
       "org.typelevel" %% "cats-effect" % "3.3.13",
     ),
     dockerExposedPorts ++= Seq(),
-    dockerBaseImage := "polyglot-ruby:latest",
+    dockerBaseImage := "polyren-base:latest",
   )
   .enablePlugins(JavaAppPackaging, DockerPlugin)
