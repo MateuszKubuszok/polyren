@@ -2,6 +2,7 @@
 .bloop
 .ensime
 .idea
+.scala-build
 .metals
 .vscode
 metals.sbt
